@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr th:each="u,TbUser:${users}">
+        <td th:text="${u.username}"></td>
+    </tr>
+</table>
+<a th:href="@{index(page=${pageInfo.nextPage})}">下一页</a>
+<p>当先页数：<span th:text="${pageInfo.pageNum}"></span></p>
+<p>总记录数：<span th:text="${pageInfo.total}"></span></p>
+<p>总页数：<span th:text="${pageInfo.pages}"></span></p>
+
+</body>
+</html>
